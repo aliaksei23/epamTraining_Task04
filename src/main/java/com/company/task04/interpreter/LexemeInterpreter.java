@@ -19,8 +19,7 @@ public class LexemeInterpreter {
         if (lexeme.matches(EXPRESSION_REGEX)) {
             try {
                 ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
-                ScriptEngine engine =
-                        scriptEngineManager.getEngineByExtension(ENGINE_NAME);
+                ScriptEngine engine = scriptEngineManager.getEngineByExtension(ENGINE_NAME);
                 Object solution = engine.eval(lexeme);
                 expressionSolution = solution.toString();
             } catch (ScriptException e) {
@@ -29,5 +28,4 @@ public class LexemeInterpreter {
         }
         return expressionSolution;
     }
-
 }
